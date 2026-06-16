@@ -44,12 +44,12 @@
 
 ## 4. 2차원 리스트 설계
 
-내 프로그램에서 사용할 2차원 리스트의 이름:weekly_habits
+내 프로그램에서 사용할 2차원 리스트의 이름:eco_records
 
-예) foods, movies, characters, questions, records
+
 
 # 월요일부터 일요일까지의 실천 기록 (1: 실천, 0: 미실천)
-weekly_habits = [
+eco_records = [
     ["월요일", 1, 0, 1],
     ["화요일", 0, 1, 1],
     ["수요일", 1, 1, 0],
@@ -76,10 +76,10 @@ weekly_habits = [
 ## 5. 함수 설계
 
 함수 이름    |               역할           | 입력값       | 반환값 또는 출력
-calculate_score | 2차원 리스트를 받아 항목별 |  weekly_habits | total_score (정수 점수)
+analyze_eco_data | 2차원 리스트를 받아 항목별 |  weekly_habits | total_score (정수 점수)
 (habits)        |  가중치를 적용해 총점 계산  |   (2차원 리스트) |
-get_grade(score)| 점수에 따라 친환경 등급을 판정 | score (정수 점수) | "A등급", "B등급" 등 (문자열)
-analyze_weakness(habits) | 가장 실천 횟수가 적은 항목을 찾아 피드백 제공 | weekly_habits (2차원 리스트) | 없음 (화면에 피드백 출력)
+evaluate_grade(score)| 점수에 따라 친환경 등급을 판정 | score (정수 점수) | "A등급", "B등급" 등 (문자열)
+print_report(habits) | 가장 실천 횟수가 적은 항목을 찾아 피드백 제공 | weekly_habits (2차원 리스트) | 없음 (화면에 피드백 출력)
 ---
 
 ## 6. 사용할 제어구조
@@ -95,7 +95,6 @@ analyze_weakness(habits) | 가장 실천 횟수가 적은 항목을 찾아 피�
 
 ### 반복문을 사용할 부분
 
-예) 2차원 리스트의 모든 항목을 하나씩 검사한다.
 
 내 계획: for문을 사용해 월요일부터 일요일까지 7개의 행을 하나씩 돌면서 실천 데이터(1 또는 0)를 확인하고 합산할 때 사용.
 
@@ -104,7 +103,6 @@ analyze_weakness(habits) | 가장 실천 횟수가 적은 항목을 찾아 피�
 
 ## 7. 예상되는 예외 상황
 
-예) 조건에 맞는 추천 결과가 없을 때, 잘못된 입력을 했을 때 등
 
 1. 사용자가 요일별 데이터를 직접 입력하게 할 경우, 0이나 1이 아닌 잘못된 숫자나 문자를 입력하는 경우 (예외 처리 필요).
 2. 일주일 내내 모든 항목을 전혀 실천하지 않아 총점이 0점이 나오는 상황.
